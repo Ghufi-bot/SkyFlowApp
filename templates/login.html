@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        
+        <div class="auth-side-brand">
+            <h1 class="brand-logo">SkyFlow</h1>
+            <p class="brand-text">Secure Access.<br>Manage your digital gallery with SkyFlow security.</p>
+        </div>
+
+        <div class="auth-side-form">
+            <h2 class="auth-title">Welcome Back</h2>
+            <p class="auth-subtitle">Please enter your details to sign in.</p>
+
+            <form method="POST">
+                
+                <div class="input-row mb-3">
+                    <div class="input-group-half">
+                        <label class="form-label">Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="User123" required>
+                    </div>
+                    
+                    <div class="input-group-half">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="••••••" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Select Role</label>
+                    <select name="role" class="form-select" required>
+                        <option value="" disabled selected>Choose your access level</option>
+                        <option value="consumer">User</option>
+                        <option value="creator">SkyFlow Creator</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Log In</button>
+            </form>
+
+            <div class="text-center mt-4">
+                <p class="small text-muted mb-1">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+                <a href="#" class="small text-muted" style="font-size: 0.8rem;">Forgot Password?</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

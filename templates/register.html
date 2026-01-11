@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        
+        <div class="auth-side-brand">
+            <h1 class="brand-logo">Join Us</h1>
+            <p class="brand-text">Start your journey.<br>Upload, share, and explore seamlessly.</p>
+        </div>
+
+        <div class="auth-side-form">
+            <h2 class="auth-title">Create Account</h2>
+            <p class="auth-subtitle">It's free and takes less than a minute.</p>
+
+            <form method="POST">
+                
+                <div class="input-row mb-3">
+                    <div class="input-group-half">
+                        <label class="form-label">Choose Username</label>
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    
+                    <div class="input-group-half">
+                        <label class="form-label">Set Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="••••••" required>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">I want to be a...</label>
+                    <select name="role" class="form-select" required>
+                        <option value="consumer">User</option>
+                        <option value="creator" selected>SkyFlow Creator</option>
+                    </select>
+                    <div class="form-text mt-1 text-muted" style="font-size: 0.75rem;">
+                        <i class="fa-solid fa-circle-info"></i> Creators get cloud storage access.
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Sign Up Now</button>
+            </form>
+
+            <div class="text-center mt-4">
+                <p class="small text-muted mb-0">Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
